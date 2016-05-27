@@ -24,4 +24,18 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/asus/flo
 
 TARGET_RECOVERY_FSTAB = device/asus/flo/fstab.flo
 
+# Optimizations
+CLANG_O3 := true
+STRICT_ALIASING := false
+KRAIT_TUNINGS := false
+GRAPHITE_OPTS := false
+ENABLE_GCCONLY := true
+
+# ROM toolchain
+TARGET_GCC_VERSION_EXP := 4.9-uber
+
+# Custom Kernel Toolchain
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.9-uber/bin
+
 include device/asus/flo/BoardConfigCommon.mk
